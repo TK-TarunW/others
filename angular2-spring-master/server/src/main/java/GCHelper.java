@@ -25,7 +25,7 @@ public class GCHelper {
                     map.put(i++,p);
                     if(i % 1000 == 0){
                         try {
-                          //  Thread.currentThread().sleep(1000L);
+                            Thread.currentThread().sleep(1000L);
                             System.out.print("*");
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -62,7 +62,7 @@ public class GCHelper {
 
 
             long count = gc.getCollectionCount();
-
+            System.out.println();
 
 
             if (count >= 0) {
@@ -76,6 +76,7 @@ public class GCHelper {
                 garbageCollectionTime += time;
             }
         }
+
 
         System.out.println("Total Garbage Collections: "
                 + totalGarbageCollections);
@@ -91,7 +92,8 @@ class Person {
     byte[] bytes;
 
     Person() {
-        bytes = new byte[1024];
+        bytes = new byte[4096];
+
     }
 
 
